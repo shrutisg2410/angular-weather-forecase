@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Weather Forecast</h1>
+    <section class="weather-section">
+      <label>City</label>
+      <select name="city" id="city" (change)="onCityChange($event)">
+        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      </select>
+      <div *ngFor="let foreCast of foreCastData">
+        <label>{{foreCast.datetime | date : 'EEEE MMM d'}}</label>
+        <img src="" alt="weather icon" />
+        <label>{{foreCast.app_max_temp | pxsuffix}}</label>
+      </div>
+    </section>
+  </body>
+</html>
